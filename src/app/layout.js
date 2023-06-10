@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import './globals.css'
 export const metadata = {
   title: 'WEB tutorial',
@@ -7,15 +8,15 @@ export default function RootLayout({ children }) {
   return (
     <html>
       <body>
-        <h1><a href="/">WEB</a></h1>
+        <h1><Link href="/">WEB</Link></h1>
         <ol>
-          <li><a href="/read/1">html</a></li>
-          <li><a href="/read/2">css</a></li>
+          <li><Link href="/read/1">html</Link></li>
+          <li><Link href="/read/2">css</Link></li>
         </ol>
         {children}
         <ul>
-          <li><a href="/create">create</a></li>
-          <li><a href="/update/id">update</a></li>
+          <li><Link href="/create">create</Link></li>
+          <li><Link href="/update/id">update</Link></li>
           <li><button>delete</button></li>
         </ul>
       </body>
