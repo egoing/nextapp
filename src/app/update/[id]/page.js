@@ -8,7 +8,7 @@ export default function Update(props){
   const [body, setBody] = useState('');
   const id = props.params.id;
   async function refresh(){
-    const resp = await fetch(`http://localhost:9999/topics/${id}`);
+    const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}topics/${id}`);
     const topic = await resp.json();
     setTitle(topic.title);
     setBody(topic.body);
@@ -20,7 +20,7 @@ export default function Update(props){
     evt.preventDefault();
     const title = evt.target.title.value;
     const body = evt.target.body.value;
-    const resp = await fetch(`http://localhost:9999/topics/${id}`, {
+    const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}topics/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'

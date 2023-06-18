@@ -8,7 +8,7 @@ export default function Create(){
     evt.preventDefault();
     const title = evt.target.title.value;
     const body = evt.target.body.value;
-    const resp = await fetch('http://localhost:9999/topics/', {
+    const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}topics/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
